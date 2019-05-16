@@ -14,11 +14,26 @@ object Obj {
     }
 }
 
+class Transformer {
+    fun upperCased(str: String): String {
+        return str.toUpperCase()
+    }
+    companion object {
+        fun lowerCased(str: String): String {
+            return str.toLowerCase()
+        }
+    }
+}
+
 fun main(args: Array<String>) {
 
-    println(capitalize("hello world!"))
+    println(capitalize("test"))
 
     println(transform("test", capitalize))
 
     println(transform("test", Obj::reverse))
+
+    println(transform("test", Transformer()::upperCased))
+
+    println(transform("tEsT", Transformer.Companion::lowerCased))
 }
