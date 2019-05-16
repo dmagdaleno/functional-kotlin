@@ -36,4 +36,10 @@ fun main(args: Array<String>) {
     println(transform("test", Transformer()::upperCased))
 
     println(transform("tEsT", Transformer.Companion::lowerCased))
+
+    println(transform("test", { str -> str.substring(0..1) }))
+
+    println(transform("test") { str -> str.substring(0..1) })
+
+    println(transform("test") { it.substring(0..1) })
 }
