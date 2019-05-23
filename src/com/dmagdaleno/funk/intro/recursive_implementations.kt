@@ -21,8 +21,21 @@ fun functionalFactorial(n: Long): Long {
     return go(n, 1)
 }
 
+// recursive with tailrec modifier
+fun tailrecFactorial(n: Long): Long {
+    tailrec fun go(n: Long, acc: Long): Long {
+        return if (n <= 0) {
+            acc
+        } else {
+            go(n - 1, n * acc)
+        }
+    }
+    return go(n, 1)
+}
+
 fun main(args: Array<String>) {
     val n = 4L
     println("Imperative: ${imperativeFactorial(n)}")
     println("Functional: ${functionalFactorial(n)}")
+    println("Tailrec: ${tailrecFactorial(n)}")
 }
