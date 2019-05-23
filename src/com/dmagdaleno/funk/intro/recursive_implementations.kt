@@ -9,7 +9,20 @@ fun imperativeFactorial(n: Long): Long {
     return result
 }
 
+// recursive (no loops or state change)
+fun functionalFactorial(n: Long): Long {
+    fun go(n: Long, acc: Long): Long {
+        return if (n <= 0) {
+            acc
+        } else {
+            go(n - 1, n * acc)
+        }
+    }
+    return go(n, 1)
+}
+
 fun main(args: Array<String>) {
-    val n = 3L
+    val n = 4L
     println("Imperative: ${imperativeFactorial(n)}")
+    println("Functional: ${functionalFactorial(n)}")
 }
