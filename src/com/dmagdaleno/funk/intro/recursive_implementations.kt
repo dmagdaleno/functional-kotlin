@@ -34,11 +34,14 @@ fun tailrecFactorial(n: Long): Long {
 }
 
 fun main(args: Array<String>) {
-    val n = 10L
+    val n = 20L
+
     println("Imperative.Result: ${imperativeFactorial(n)}")
     println("Imperative.Time: ${executionTime { imperativeFactorial(n) }}")
+
     println("Functional.Result: ${functionalFactorial(n)}")
     println("Functional.Time: ${executionTime { functionalFactorial(n) }}")
+
     println("Tailrec.Result: ${tailrecFactorial(n)}")
     println("Tailrec.Time: ${executionTime { tailrecFactorial(n) }}")
 }
