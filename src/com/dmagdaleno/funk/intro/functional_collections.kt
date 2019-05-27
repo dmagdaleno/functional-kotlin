@@ -1,8 +1,12 @@
 package com.dmagdaleno.funk.intro
 
-val numbers: List<Int> = listOf(1, 2, 3, 4)
-
 fun main(args: Array<String>) {
+
+    mapAListToAnother()
+}
+
+private fun mapAListToAnother() {
+    val numbers: List<Int> = listOf(1, 2, 3, 4)
 
     // imperative way
     val imperative: MutableList<Int> = mutableListOf()
