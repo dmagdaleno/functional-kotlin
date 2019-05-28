@@ -7,6 +7,8 @@ fun main(args: Array<String>) {
     mapAListToAnother()
 
     sumItemsOfAList()
+
+    sumItemsOfAListWithFold()
 }
 
 private fun mapAListToAnother() {
@@ -36,4 +38,9 @@ private fun sumItemsOfAList() {
 
     // functional way
     println("Functional: ${numbers.sum()}")
+}
+
+private fun sumItemsOfAListWithFold() {
+    val sum = numbers.fold(0) { acc, i -> acc + i }
+    println("Functional (with fold): $sum")
 }
