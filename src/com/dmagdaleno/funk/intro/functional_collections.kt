@@ -41,6 +41,9 @@ private fun sumItemsOfAList() {
 }
 
 private fun sumItemsOfAListWithFold() {
-    val sum = numbers.fold(0) { acc, i -> acc + i }
+    val sum = numbers.fold(0) { acc, i ->
+        println("acc, i = $acc, $i")
+        acc + i
+    }
     println("Functional (with fold): $sum")
 }
