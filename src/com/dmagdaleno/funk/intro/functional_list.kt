@@ -16,6 +16,14 @@ fun main() {
 
     reverse()
 
+    foldRight()
+
+}
+
+fun foldRight() {
+    val numbers = intListOf(1, 2, 3, 4)
+    val sum = numbers.foldRight(0) { accumulator, i -> accumulator + i }
+    println(sum)
 }
 
 fun reverse() {
