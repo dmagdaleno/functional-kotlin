@@ -14,6 +14,14 @@ fun main() {
 
     fold()
 
+    reverse()
+
+}
+
+fun reverse() {
+    val numbers = intListOf(1, 2, 3, 4)
+    val reversed = numbers.reverse()
+    println(reversed)
 }
 
 fun fold() {
