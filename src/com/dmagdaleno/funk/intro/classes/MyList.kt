@@ -33,4 +33,8 @@ sealed class MyList<out T> {
         return this.reverse().fold(init, f)
     }
 
+    fun <R> map(f:(T) -> R): MyList<R> {
+        return foldRight(Empty as MyList<R>){ tail, head -> Cons(f(head), tail) }
+    }
+
 }
