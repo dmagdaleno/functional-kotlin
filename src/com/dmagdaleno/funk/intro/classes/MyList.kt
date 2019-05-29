@@ -29,4 +29,8 @@ sealed class MyList<out T> {
 
     fun reverse(): MyList<T> = fold(Empty as MyList<T>) { accumulator, i -> Cons(i, accumulator) }
 
+    fun <R> foldRight(init: R, f: (R, T) -> R): R {
+        return this.reverse().fold(init, f)
+    }
+
 }
