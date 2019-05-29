@@ -12,6 +12,14 @@ fun main() {
 
     forEach()
 
+    fold()
+
+}
+
+fun fold() {
+    val numbers = intListOf(1, 2, 3, 4)
+    val sum = numbers.fold(0) { accumulator, i -> accumulator + i }
+    println(sum)
 }
 
 private fun forEach() {
