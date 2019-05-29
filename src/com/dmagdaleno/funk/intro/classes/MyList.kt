@@ -27,4 +27,6 @@ sealed class MyList<out T> {
         return go(this, init, f)
     }
 
+    fun reverse(): MyList<T> = fold(Empty as MyList<T>) { accumulator, i -> Cons(i, accumulator) }
+
 }
