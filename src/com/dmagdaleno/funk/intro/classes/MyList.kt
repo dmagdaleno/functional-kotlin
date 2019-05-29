@@ -6,4 +6,17 @@ sealed class MyList<out T> {
 
     data class Cons<out T>(val head: T, val tail: MyList<T>) : MyList<T>()
 
+    fun forEach(f: (T) -> Unit) {
+        tailrec fun go(list: MyList<T>, f: (T) -> Unit) {
+            when (list) {
+                is Cons -> {
+                    f(list.head)
+                    go(list.tail, f)
+                }
+                is Empty -> Unit
+            }
+        }
+        go(this, f)
+    }
+
 }
