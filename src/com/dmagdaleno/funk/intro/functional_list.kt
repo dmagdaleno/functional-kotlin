@@ -5,10 +5,29 @@ import com.dmagdaleno.funk.intro.classes.MyList.Cons
 import com.dmagdaleno.funk.intro.classes.MyList.Empty
 
 fun main() {
-    
-    println(Cons(1, Cons(2, Cons(3, Cons(4, Empty)))))
 
+    testConstruct()
+
+    simpleInit()
+
+    forEach()
+
+}
+
+private fun forEach() {
+    val numbers = intListOf(1, 2, 3, 4)
+    numbers.forEach {
+        println(it)
+    }
+
+}
+
+private fun simpleInit() {
     println(intListOf(1, 2, 3, 4))
+}
+
+private fun testConstruct() {
+    println(Cons(1, Cons(2, Cons(3, Cons(4, Empty)))))
 }
 
 fun intListOf(vararg numbers: Int): MyList<Int> {
