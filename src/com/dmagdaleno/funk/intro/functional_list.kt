@@ -18,6 +18,14 @@ fun main() {
 
     foldRight()
 
+    map()
+
+}
+
+fun map() {
+    val numbers = intListOf(1, 2, 3, 4)
+    val numbersTimesTwo = numbers.map { it *2 }
+    println(numbersTimesTwo)
 }
 
 fun foldRight() {
